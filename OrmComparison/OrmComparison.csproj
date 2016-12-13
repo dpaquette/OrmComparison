@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="_CreateSampleTable.sql" />
     <Compile Include="PetaPocoExample.cs" />
     <Compile Include="DapperExample.cs" />
     <Compile Include="Campaign.cs" />

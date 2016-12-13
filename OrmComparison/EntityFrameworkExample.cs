@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrmComparison
 {
@@ -61,6 +58,15 @@ namespace OrmComparison
                               ,[OrganizerId]
                               ,[TimeZoneId]
                           FROM [dbo].[Campaign]  WHERE [Id] = @p0", campaignId).Single();
+            }
+        }
+
+        public static void UpdateCampaign(Campaign campaign)
+        {
+            using (var context = new CampaignContext(Settings.ConnectionString))
+            {
+                context.Entry(campaign).State = EntityState.Modified;
+                context.SaveChanges();
             }
         }
     }

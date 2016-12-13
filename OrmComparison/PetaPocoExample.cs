@@ -20,7 +20,16 @@ namespace OrmComparison
         {
             using (IDatabase db = new Database(Settings.ConnectionString, providerName: "SqlServer"))
             {
-                return db.Single<Campaign>("WHERE Id = @0", id);
+                return db.Single<Campaign>("WHERE Id = @0", id);               
+            }
+        }
+
+        public static void UpdateCampaign(Campaign campaign)
+        {
+
+            using (IDatabase db = new Database(Settings.ConnectionString, providerName: "SqlServer"))
+            {
+                db.Update(campaign);
             }
         }
     }

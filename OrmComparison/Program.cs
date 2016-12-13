@@ -8,17 +8,17 @@ namespace OrmComparison
     {
         static void Main(string[] args)
         {
-            var campaign = DataReaderExample.GetById(1);
+            var campaign = EntityFrameworkExample.GetById(1);
 
             DisplayAsTable(campaign);
 
             Console.WriteLine("Enter a new description");
             campaign.Description = Console.ReadLine();
 
-            DataReaderExample.UpdateCampaign(campaign);
+            EntityFrameworkExample.UpdateCampaign(campaign);
 
             Console.WriteLine("");
-            DisplayAsTable(DataReaderExample.GetById(1));
+            DisplayAsTable(EntityFrameworkExample.GetById(1));
             
 
             Console.ReadLine();

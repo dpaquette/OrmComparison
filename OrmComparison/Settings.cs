@@ -2,7 +2,7 @@
 {
     public static class Settings
     {
-        public static string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Database=AllReady;Integrated Security=true;MultipleActiveResultsets=true;";
+        public static string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
         public static string CampaignsQuery = @"SELECT [Id]
                               ,[CampaignImpactId]

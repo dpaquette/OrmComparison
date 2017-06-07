@@ -77,7 +77,6 @@
     <Content Include="_CreateSampleTable.sql" />
     <Compile Include="PetaPocoExample.cs" />
     <Compile Include="DapperExample.cs" />
-    <Compile Include="Campaign.cs" />
     <Compile Include="AutoMapperExample.cs" />
     <Compile Include="DataReaderExample.cs" />
     <Compile Include="EntityFrameworkExample.cs" />
@@ -105,6 +104,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{8c728519-4f77-4e48-b26d-fc7ed884e506}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TypeProvider\TypeProvider.fsproj">
+      <Project>{a5eb0f14-1b1b-4e8e-b00e-46448e79efcb}</Project>
+      <Name>TypeProvider</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

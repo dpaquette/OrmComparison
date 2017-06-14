@@ -17,17 +17,15 @@ namespace OrmComparison
             });
         }
 
-        public static IList<Campaign> GetAll()
+        public static IEnumerable<Campaign> GetAll()
         {
             var results = new List<Campaign>();
 
             using (SqlConnection connection = new SqlConnection(Settings.ConnectionString))
             {
                 SqlCommand command = new SqlCommand(Settings.CampaignsQuery, connection);
-                connection.Open();
                 IDataReader reader = command.ExecuteReader();
                 results.AddRange(Mapper.Map<IDataReader, IEnumerable<Campaign>>(reader));
-                reader.Close();
             }
             return results;
         }

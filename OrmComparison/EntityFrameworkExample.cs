@@ -22,7 +22,7 @@ namespace OrmComparison
 
     public static class EntityFrameworkExample
     {
-        public static IList<Campaign> GetAll()
+        public static IEnumerable<Campaign> GetAll()
         {
             using (var context = new CampaignContext(Settings.ConnectionString))
             {

@@ -2,23 +2,30 @@
 using System.Collections.Generic;
 using ConsoleTables.Core;
 
+//change this for different providers
+using static FSharpTypeProviderExample;
+//using static OrmComparison.DapperExample;
+//using static OrmComparison.AutoMapperExample;
+//using static OrmComparison.EntityFrameworkExample;
+//using static OrmComparison.PetaPocoExample;
+
 namespace OrmComparison
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var campaign = EntityFrameworkExample.GetById(1);
+            var campaign = GetById(1);
 
             DisplayAsTable(campaign);
 
             Console.WriteLine("Enter a new description");
             campaign.Description = Console.ReadLine();
 
-            EntityFrameworkExample.UpdateCampaign(campaign);
+            UpdateCampaign(campaign);
 
             Console.WriteLine("");
-            DisplayAsTable(EntityFrameworkExample.GetById(1));
+            DisplayAsTable(GetById(1));
             
 
             Console.ReadLine();

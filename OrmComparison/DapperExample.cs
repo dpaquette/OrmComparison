@@ -9,31 +9,25 @@ namespace OrmComparison
     public static class DapperExample
     {
 
-        public static IList<Campaign> GetAll()
+        public static IEnumerable<Campaign> GetAll()
         {
-            var results = new List<Campaign>();
 
             using (SqlConnection connection = new SqlConnection(Settings.ConnectionString))
             {
-                connection.Open();
-                results.AddRange(connection.Query<Campaign>(Settings.CampaignsQuery));
+                return connection.Query<Campaign>(Settings.CampaignsQuery);
             }
-            return results;
         }
 
         public static Campaign GetById(int id)
         {
-            using (SqlConnection connection = new SqlConnection(Settings.ConnectionString))
+            using (var connection = new SqlConnection(Settings.ConnectionString))
             {
-                connection.Open();
+               
                 return connection.QuerySingle<Campaign>(Settings.CampaignByIdQuery, 
                                                 new { CampaignId = id });
             }
         }
-
-
-
-
+        
         static DapperExample()
         {
             //Override default table name convention for Dapper.Contrib

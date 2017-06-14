@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmComparison", "OrmComparison\OrmComparison.csproj", "{24C3E7A2-1F47-4D9E-84B6-F6BCD7E8E1A3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TypeProvider", "TypeProvider\TypeProvider.fsproj", "{A5EB0F14-1B1B-4E8E-B00E-46448E79EFCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{8C728519-4F77-4E48-B26D-FC7ED884E506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{24C3E7A2-1F47-4D9E-84B6-F6BCD7E8E1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24C3E7A2-1F47-4D9E-84B6-F6BCD7E8E1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24C3E7A2-1F47-4D9E-84B6-F6BCD7E8E1A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5EB0F14-1B1B-4E8E-B00E-46448E79EFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5EB0F14-1B1B-4E8E-B00E-46448E79EFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5EB0F14-1B1B-4E8E-B00E-46448E79EFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5EB0F14-1B1B-4E8E-B00E-46448E79EFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C728519-4F77-4E48-B26D-FC7ED884E506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C728519-4F77-4E48-B26D-FC7ED884E506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C728519-4F77-4E48-B26D-FC7ED884E506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C728519-4F77-4E48-B26D-FC7ED884E506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,19 +6,17 @@ namespace OrmComparison
     public static class PetaPocoExample
     {
 
-        public static IList<Campaign> GetAll()
+        public static IEnumerable<Campaign> GetAll()
         {
-            var results = new List<Campaign>();
-            using (IDatabase db = new Database(Settings.ConnectionString, providerName: "SqlServer"))
+            using (IDatabase db = new PetaPoco.Database(Settings.ConnectionString, providerName: "SqlServer"))
             {
-                results.AddRange(db.Query<Campaign>(Settings.CampaignsQuery));
+                return db.Query<Campaign>(Settings.CampaignsQuery);
             }
-            return results;
         }
 
         public static Campaign GetById(int id)
         {
-            using (IDatabase db = new Database(Settings.ConnectionString, providerName: "SqlServer"))
+            using (IDatabase db = new PetaPoco.Database(Settings.ConnectionString, providerName: "SqlServer"))
             {
                 return db.Single<Campaign>("WHERE Id = @0", id);               
             }
@@ -27,7 +25,7 @@ namespace OrmComparison
         public static void UpdateCampaign(Campaign campaign)
         {
 
-            using (IDatabase db = new Database(Settings.ConnectionString, providerName: "SqlServer"))
+            using (IDatabase db = new PetaPoco.Database(Settings.ConnectionString, providerName: "SqlServer"))
             {
                 db.Update(campaign);
             }
